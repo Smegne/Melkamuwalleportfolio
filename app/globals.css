@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors - Green & Blue-Black */
+  --primary: #10b981;
+  --secondary: #059669;
+  --accent: #f59e0b;
+  --black: #000000;
+  --white: #ffffff;
+  --blue-black: #0f172a;
+  --light-gray: #f5f5f5;
+  --gray: #94a3b8;
+  --dark-gray: #1e293b;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  --card-shadow-hover: 0 12px 24px rgba(16, 185, 129, 0.15);
+
+  /* Design System - Light Theme */
+  --background: #f8fafc;
+  --foreground: var(--blue-black);
+  --card: var(--white);
+  --card-foreground: var(--blue-black);
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --radius: 0.625rem;
+
+  --input: #e2e8f0;
+  --ring: var(--primary);
+  --chart-1: #10b981;
+  --chart-2: #3b82f6;
+  --chart-3: #f59e0b;
+  --chart-4: #ec4899;
+  --chart-5: #8b5cf6;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: var(--blue-black);
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: var(--blue-black);
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #10b981;
+}
+
+.dark {
+  /* Design System - Dark Theme */
+  --background: var(--blue-black);
+  --foreground: var(--white);
+  --card: #1a2332;
+  --card-foreground: var(--white);
+  --muted: var(--gray);
+  --muted-foreground: #cbd5e1;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: var(--primary);
+  --chart-1: #10b981;
+  --chart-2: #3b82f6;
+  --chart-3: #f59e0b;
+  --chart-4: #ec4899;
+  --chart-5: #8b5cf6;
+  --sidebar: #0f172a;
+  --sidebar-foreground: var(--white);
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: #1a2332;
+  --sidebar-accent-foreground: var(--white);
+  --sidebar-border: #334155;
+  --sidebar-ring: #10b981;
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--white);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--white);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--black);
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: var(--white);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Updated card styles with proper shadows and green hover effects */
+  .card-shadow {
+    @apply shadow-lg hover:shadow-xl transition-all duration-300;
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-shadow-hover {
+    @apply hover:shadow-2xl transition-all duration-300;
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .card-hover {
+    @apply hover:border-primary/50 transition-all duration-300;
+  }
+
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .green-glow {
+    @apply hover:shadow-lg transition-all duration-300;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+
+  .green-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+  }
+}
