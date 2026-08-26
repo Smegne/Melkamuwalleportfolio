@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true)
-    const isDarkMode = document.documentElement.classList.contains("dark")
+    const isDarkMode = localStorage.theme !== "light"
     setIsDark(isDarkMode)
   }, [])
 

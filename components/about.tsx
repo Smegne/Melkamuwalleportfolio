@@ -51,16 +51,17 @@ export default function About() {
 
           {/* Image */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl smooth-transition green-glow">
+            <div className="relative w-full rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl smooth-transition green-glow">
               <Image
                 src="/images/melkamu2.JPG"
                 alt="Melkamu Wale - Creative Professional"
-                fill
+                width={800}
+                height={800}
                 unoptimized
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ width: "100%", height: "auto" }}
                 className="rounded-xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent pointer-events-none" />
             </div>
           </motion.div>
         </motion.div>
