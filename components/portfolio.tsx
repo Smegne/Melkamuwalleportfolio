@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Play } from "lucide-react"
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("All")
@@ -125,6 +126,70 @@ export default function Portfolio() {
       image: "/images/vid5.jpg",
       description: "Video editing work showcase",
       link: "https://drive.google.com/file/d/1uq-pgN-ZhpojFUHuPsV3Smg1hcksbaLL/view?usp=sharing",
+    },
+    {
+      id: 17,
+      title: "Video Editing Project 6",
+      category: "Video Editing",
+      image: "/images/vid6.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/kdCj2fn4huM?feature=share",
+    },
+    {
+      id: 18,
+      title: "Video Editing Project 7",
+      category: "Video Editing",
+      image: "/images/vid7.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/TUlmy4O0ojQ?feature=share",
+    },
+    {
+      id: 19,
+      title: "Video Editing Project 8",
+      category: "Video Editing",
+      image: "/images/vid8.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/m43jz0_OQ60?feature=share",
+    },
+    {
+      id: 20,
+      title: "Video Editing Project 9",
+      category: "Video Editing",
+      image: "/images/vid9.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/rK1QnTnM1a8?feature=share",
+    },
+    {
+      id: 21,
+      title: "Video Editing Project 10",
+      category: "Video Editing",
+      image: "/images/vid10.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/RN_XQgzJN3Q?feature=share",
+    },
+    {
+      id: 22,
+      title: "Video Editing Project 11",
+      category: "Video Editing",
+      image: "/images/vid11.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/gn_i26J529Y?feature=share",
+    },
+    {
+      id: 23,
+      title: "Video Editing Project 12",
+      category: "Video Editing",
+      image: "/images/vid12.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtube.com/shorts/FQAWlLEBUnw?feature=share",
+    },
+    {
+      id: 24,
+      title: "Video Editing Project 13",
+      category: "Video Editing",
+      image: "/images/vid13.jpg",
+      description: "Video editing work showcase",
+      link: "https://youtu.be/8vxN5w0Xkjo",
     }
   ]
 
@@ -219,6 +284,16 @@ export default function Portfolio() {
                     className="w-full h-full object-contain smooth-transition group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
+
+                  {/* Play Button for Video Items */}
+                  {item.category === "Video Editing" && (
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="px-5 py-2.5 rounded-full bg-emerald-500/90 text-white flex items-center gap-2 shadow-lg shadow-emerald-500/40 backdrop-blur-sm opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out font-semibold text-sm md:text-base">
+                        <Play className="w-5 h-5 fill-white" />
+                        <span>Play</span>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Overlay Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-4 translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-out">
